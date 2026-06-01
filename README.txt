@@ -1,43 +1,18 @@
-법률·세금 계산기 v9.0 금융 확장 완성본
+법률·세금 계산기 v9.1 메뉴 통합 패치
 
-사이트 주소:
-https://woltoo12.github.io
-
-v9.0 추가:
-- 금융 계산기 8개 추가
-  1. 대출이자 계산기
-  2. 원리금균등 계산기
-  3. 원금균등 계산기
-  4. 만기일시상환 계산기
-  5. 적금 계산기
-  6. 예금 계산기
-  7. 복리 계산기
-  8. 목돈 만들기 계산기
-- 금융 계산기별 개별 HTML 페이지
-- 금융 계산기 SEO 설명글 포함
-- 메인 index.html 금융 카테고리 추가
-- sitemap.xml 갱신
-
-총 계산기:
-- 법률·채권 4개
-- 부동산 4개
-- 직장인 4개
-- 금융 8개
-= 총 20개 계산기
+수정 내용:
+- 모든 계산기 페이지의 상단 메뉴를 최신 20개 계산기 메뉴로 통일
+- 기존 법률/부동산/직장인 계산기 페이지에서 금융 계산기 버튼이 사라지는 문제 수정
+- 현재 페이지 버튼 active 표시 유지
+- 기존 계산 기능, sitemap.xml, robots.txt, 개인정보처리방침, 이용약관, 문의 페이지 유지
 
 업로드 방법:
 1. 압축 해제
 2. 모든 파일을 woltoo12.github.io 저장소 루트에 덮어쓰기 업로드
-3. GitHub Pages 배포 후 아래 확인
-   - https://woltoo12.github.io/loan-interest.html
-   - https://woltoo12.github.io/equal-payment-loan.html
-   - https://woltoo12.github.io/fixed-deposit.html
-   - https://woltoo12.github.io/sitemap.xml
+3. GitHub Pages 배포 후 아래 페이지에서 상단 메뉴를 확인
 
-Search Console:
-- Sitemaps 메뉴에서 sitemap.xml 다시 제출
-- 새 금융 페이지 8개 URL 검사 후 색인 생성 요청
-
-주의:
-모든 계산기는 참고용 간이 계산기입니다.
-실제 금융상품 조건, 세금, 수수료, 상환 조건은 금융기관 기준을 확인해야 합니다.
+확인할 페이지:
+- https://woltoo12.github.io/severance-pay.html
+- https://woltoo12.github.io/payment-order.html
+- https://woltoo12.github.io/acquisition-tax.html
+- https://woltoo12.github.io/loan-interest.html

@@ -1,33 +1,32 @@
-법률·세금 계산기 v8.0
+법률·세금 계산기 완성본
 
-GitHub Pages 업로드용 SEO 분리 버전입니다.
+사이트 주소:
+https://woltoo12.github.io
 
-구성:
-- index.html 메인
-- 법률·채권 계산기 개별 페이지
-  - overdue-interest.html
-  - delay-damages.html
-  - payment-order.html
-  - seizure-attachment.html
-- 부동산 계산기 개별 페이지
-  - acquisition-tax.html
-  - capital-gains-tax.html
-  - brokerage-fee.html
-  - registration-cost.html
-- 직장인 계산기 개별 페이지
-  - severance-pay.html
-  - annual-leave-pay.html
-  - weekly-holiday-pay.html
-  - net-salary.html
-- style.css 공통 디자인
-- app.js 공통 계산 로직
+포함 파일:
+- 계산기 개별 HTML 페이지
+- style.css
+- app.js
+- robots.txt
+- sitemap.xml
+- privacy.html
+- terms.html
+- contact.html
 
-사용 방법:
+GitHub 업로드 방법:
 1. 압축 해제
-2. GitHub 저장소에 모든 파일 업로드
-3. GitHub Pages 활성화
-4. 사용자명.github.io 주소로 접속
+2. 모든 파일을 woltoo12.github.io 저장소의 루트에 업로드
+3. 기존 파일이 있으면 덮어쓰기
+4. 업로드 후 아래 주소 확인
+   - https://woltoo12.github.io/robots.txt
+   - https://woltoo12.github.io/sitemap.xml
+   - https://woltoo12.github.io/privacy.html
+   - https://woltoo12.github.io/terms.html
+   - https://woltoo12.github.io/contact.html
+
+Search Console:
+- Sitemaps 메뉴에서 sitemap.xml 제출
+- URL 검사에서 주요 페이지 색인 생성 요청
 
 주의:
 모든 계산기는 참고용 간이 계산기입니다.
-실제 법률 판단, 세금 신고, 임금 정산 전에는 관련 기관 또는 전문가 확인이 필요합니다.

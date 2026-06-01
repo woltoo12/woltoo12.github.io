@@ -1,56 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-<loc>https://woltoo12.github.io/</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/overdue-interest.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/delay-damages.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/payment-order.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/seizure-attachment.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/acquisition-tax.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/capital-gains-tax.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/brokerage-fee.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/registration-cost.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/severance-pay.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/annual-leave-pay.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/weekly-holiday-pay.html</loc>
-</url>
-
-<url>
-<loc>https://woltoo12.github.io/net-salary.html</loc>
-</url>
-
+  <url>
+    <loc>https://woltoo12.github.io/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/overdue-interest.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/delay-damages.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/payment-order.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/seizure-attachment.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/acquisition-tax.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/capital-gains-tax.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/brokerage-fee.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/registration-cost.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/severance-pay.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/annual-leave-pay.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/weekly-holiday-pay.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/net-salary.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/privacy.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/terms.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://woltoo12.github.io/contact.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

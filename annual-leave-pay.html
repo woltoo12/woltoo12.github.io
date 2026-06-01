@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>연차수당 계산기 | 직장인 계산기</title>
+  <meta name="description" content="월 통상임금, 소정근로시간, 미사용 연차일수로 연차수당을 계산합니다.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="side-ad left"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">좌측 배너</div></div></aside>
+    <main class="app">
+      <header><h1>연차수당 계산기</h1><p>월 통상임금, 소정근로시간, 미사용 연차일수로 연차수당을 계산합니다.</p></header>
+      <nav class="nav"><a class="" href="index.html">홈</a><a class="" href="overdue-interest.html">연체이자</a><a class="" href="delay-damages.html">지연손해금</a><a class="" href="payment-order.html">지급명령</a><a class="" href="seizure-attachment.html">압류·가압류</a><a class="" href="acquisition-tax.html">취등록세</a><a class="" href="capital-gains-tax.html">양도소득세</a><a class="" href="brokerage-fee.html">중개보수</a><a class="" href="registration-cost.html">등기비용</a><a class="" href="severance-pay.html">퇴직금</a><a class="active" href="annual-leave-pay.html">연차수당</a><a class="" href="weekly-holiday-pay.html">주휴수당</a><a class="" href="net-salary.html">실수령액</a></nav>
+      
+<section class="card"><div class="notice">연차수당은 통상임금 기준 간이 계산입니다.</div></section>
+<section class="card"><h2 class="small-title">계산 정보 입력</h2>
+<div class="grid two"><div><label>월 통상임금</label><input id="alMonthlyPay" inputmode="numeric" value="3,000,000"></div><div><label>월 소정근로시간</label><input id="alMonthlyHours" inputmode="decimal" value="209"></div></div>
+<div class="grid two" style="margin-top:12px;"><div><label>1일 소정근로시간</label><input id="alDailyHours" inputmode="decimal" value="8"></div><div><label>미사용 연차일수</label><input id="alUnusedDays" inputmode="decimal" value="5"></div></div>
+<div class="grid two" style="margin-top:14px;"><button class="btn" onclick="calculateAnnualLeave()">계산하기</button><button class="btn secondary" onclick="location.reload()">초기화</button></div></section>
+<section id="alResultCard" class="card result"><h2>계산 결과</h2><div class="summary"><div class="metric"><div class="name">시간급 통상임금</div><div id="outHourlyWage" class="value">0원</div></div><div class="metric"><div class="name">1일 통상임금</div><div id="outDailyWage" class="value">0원</div></div><div class="metric"><div class="name">예상 연차수당</div><div id="outAnnualLeavePay" class="value">0원</div></div></div><div id="alFormulaBox" class="formula"></div><button class="btn light" style="margin-top:12px" onclick="copyAnnualLeave()">결과 복사</button></section>
+
+      <section class="card"><h2 class="small-title">광고 영역 예시</h2><div class="adbox">나중에 Google AdSense 광고 코드를 넣을 위치입니다.</div></section>
+      <footer>법률·세금 계산기 v8.0 / GitHub Pages용 SEO 분리 버전</footer>
+    </main>
+    <aside class="side-ad right"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">우측 배너</div></div></aside>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

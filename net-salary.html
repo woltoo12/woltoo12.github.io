@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>4대보험·실수령액 계산기 | 직장인 계산기</title>
+  <meta name="description" content="월 세전급여에서 4대보험과 세금을 차감한 예상 실수령액을 계산합니다.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="side-ad left"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">좌측 배너</div></div></aside>
+    <main class="app">
+      <header><h1>4대보험·실수령액 계산기</h1><p>월 세전급여에서 4대보험과 세금을 차감한 예상 실수령액을 계산합니다.</p></header>
+      <nav class="nav"><a class="" href="index.html">홈</a><a class="" href="overdue-interest.html">연체이자</a><a class="" href="delay-damages.html">지연손해금</a><a class="" href="payment-order.html">지급명령</a><a class="" href="seizure-attachment.html">압류·가압류</a><a class="" href="acquisition-tax.html">취등록세</a><a class="" href="capital-gains-tax.html">양도소득세</a><a class="" href="brokerage-fee.html">중개보수</a><a class="" href="registration-cost.html">등기비용</a><a class="" href="severance-pay.html">퇴직금</a><a class="" href="annual-leave-pay.html">연차수당</a><a class="" href="weekly-holiday-pay.html">주휴수당</a><a class="active" href="net-salary.html">실수령액</a></nav>
+      
+<section class="card"><div class="notice">2026년 사회보험 근로자 부담률 기본값을 넣었습니다. 소득세는 직접 입력 방식입니다.</div></section>
+<section class="card"><h2 class="small-title">계산 정보 입력</h2>
+<div class="grid two"><div><label>월 세전급여</label><input id="nsGrossPay" inputmode="numeric" value="3,000,000"></div><div><label>소득세/지방소득세</label><input id="nsIncomeTax" inputmode="numeric" value="0"></div></div>
+<div class="grid two" style="margin-top:12px;"><div><label>국민연금 부담률(%)</label><input id="nsPensionRate" inputmode="decimal" value="4.75"></div><div><label>건강보험 부담률(%)</label><input id="nsHealthRate" inputmode="decimal" value="3.595"></div></div>
+<div class="grid two" style="margin-top:12px;"><div><label>장기요양 부담률(%)</label><input id="nsCareRate" inputmode="decimal" value="0.4724"></div><div><label>고용보험 부담률(%)</label><input id="nsEmploymentRate" inputmode="decimal" value="0.9"></div></div>
+<div class="grid two" style="margin-top:14px;"><button class="btn" onclick="calculateNetSalary()">계산하기</button><button class="btn secondary" onclick="location.reload()">초기화</button></div></section>
+<section id="nsResultCard" class="card result"><h2>계산 결과</h2><div class="summary"><div class="metric"><div class="name">4대보험 합계</div><div id="outInsuranceTotal" class="value">0원</div></div><div class="metric"><div class="name">세금 입력액</div><div id="outTaxInput" class="value">0원</div></div><div class="metric"><div class="name">예상 실수령액</div><div id="outNetSalary" class="value">0원</div></div></div><div class="summary" style="margin-top:10px"><div class="metric"><div class="name">국민연금</div><div id="outPension" class="value">0원</div></div><div class="metric"><div class="name">건강+장기요양</div><div id="outHealthCare" class="value">0원</div></div><div class="metric"><div class="name">고용보험</div><div id="outEmployment" class="value">0원</div></div></div><div id="nsFormulaBox" class="formula"></div><button class="btn light" style="margin-top:12px" onclick="copyNetSalary()">결과 복사</button></section>
+
+      <section class="card"><h2 class="small-title">광고 영역 예시</h2><div class="adbox">나중에 Google AdSense 광고 코드를 넣을 위치입니다.</div></section>
+      <footer>법률·세금 계산기 v8.0 / GitHub Pages용 SEO 분리 버전</footer>
+    </main>
+    <aside class="side-ad right"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">우측 배너</div></div></aside>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

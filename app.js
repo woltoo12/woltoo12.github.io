@@ -227,3 +227,238 @@ function calculateNetSalary(){
   nsResultCard.classList.add("show"); nsResultCard.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function copyNetSalary(){ copyText(`[실수령액 계산 결과]\n4대보험 합계: ${outInsuranceTotal.textContent}\n세금: ${outTaxInput.textContent}\n실수령액: ${outNetSalary.textContent}`); }
+
+
+/* =========================
+   v9.0 Finance Calculators
+   ========================= */
+
+function monthlyRate(annualRate){
+  return (Number(annualRate) || 0) / 100 / 12;
+}
+
+function calculateLoanInterest(){
+  const principal = Number(onlyNumber(document.getElementById("loanAmount").value));
+  const annual = Number(onlyNumber(document.getElementById("loanRate").value));
+  const months = Number(onlyNumber(document.getElementById("loanMonths").value));
+  if(!principal || principal <= 0) return alert("대출금을 입력하세요.");
+  if(!months || months <= 0) return alert("기간을 입력하세요.");
+
+  const r = monthlyRate(annual);
+  const simpleInterest = principal * (annual / 100) * months / 12;
+  const total = principal + simpleInterest;
+
+  document.getElementById("outLoanPrincipal").textContent = won(principal);
+  document.getElementById("outLoanInterest").textContent = won(simpleInterest);
+  document.getElementById("outLoanTotal").textContent = won(total);
+  document.getElementById("loanFormulaBox").textContent =
+    "대출금 " + won(principal) + " × 연 " + annual + "% × " + months + "개월 ÷ 12 = 이자 " + won(simpleInterest);
+  document.getElementById("loanResultCard").classList.add("show");
+  document.getElementById("loanResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyLoanInterest(){
+  copyText("[대출이자 계산 결과]\n대출금: " + outLoanPrincipal.textContent + "\n총 이자: " + outLoanInterest.textContent + "\n총 상환액: " + outLoanTotal.textContent);
+}
+
+function calculateEqualPaymentLoan(){
+  const principal = Number(onlyNumber(document.getElementById("eqLoanAmount").value));
+  const annual = Number(onlyNumber(document.getElementById("eqLoanRate").value));
+  const months = Number(onlyNumber(document.getElementById("eqLoanMonths").value));
+  if(!principal || principal <= 0) return alert("대출금을 입력하세요.");
+  if(!months || months <= 0) return alert("기간을 입력하세요.");
+
+  const r = monthlyRate(annual);
+  let payment = 0;
+  if(r === 0) payment = principal / months;
+  else payment = principal * r * Math.pow(1+r, months) / (Math.pow(1+r, months)-1);
+
+  const total = payment * months;
+  const interest = total - principal;
+
+  document.getElementById("outEqMonthly").textContent = won(payment);
+  document.getElementById("outEqInterest").textContent = won(interest);
+  document.getElementById("outEqTotal").textContent = won(total);
+  document.getElementById("eqFormulaBox").textContent =
+    "매월 같은 금액을 상환하는 원리금균등상환 방식입니다. 월 상환액 " + won(payment) + " × " + months + "개월 = " + won(total);
+  document.getElementById("eqResultCard").classList.add("show");
+  document.getElementById("eqResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyEqualPaymentLoan(){
+  copyText("[원리금균등 계산 결과]\n월 상환액: " + outEqMonthly.textContent + "\n총 이자: " + outEqInterest.textContent + "\n총 상환액: " + outEqTotal.textContent);
+}
+
+function calculateEqualPrincipalLoan(){
+  const principal = Number(onlyNumber(document.getElementById("epLoanAmount").value));
+  const annual = Number(onlyNumber(document.getElementById("epLoanRate").value));
+  const months = Number(onlyNumber(document.getElementById("epLoanMonths").value));
+  if(!principal || principal <= 0) return alert("대출금을 입력하세요.");
+  if(!months || months <= 0) return alert("기간을 입력하세요.");
+
+  const r = monthlyRate(annual);
+  const monthlyPrincipal = principal / months;
+  let totalInterest = 0;
+  let firstPayment = 0;
+  let lastPayment = 0;
+
+  for(let i=0; i<months; i++){
+    const remain = principal - monthlyPrincipal * i;
+    const interest = remain * r;
+    const payment = monthlyPrincipal + interest;
+    totalInterest += interest;
+    if(i === 0) firstPayment = payment;
+    if(i === months - 1) lastPayment = payment;
+  }
+  const total = principal + totalInterest;
+
+  document.getElementById("outEpFirst").textContent = won(firstPayment);
+  document.getElementById("outEpLast").textContent = won(lastPayment);
+  document.getElementById("outEpInterest").textContent = won(totalInterest);
+  document.getElementById("outEpTotal").textContent = won(total);
+  document.getElementById("epFormulaBox").textContent =
+    "매월 같은 원금을 갚고 이자는 남은 원금에 붙는 원금균등상환 방식입니다.";
+  document.getElementById("epResultCard").classList.add("show");
+  document.getElementById("epResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyEqualPrincipalLoan(){
+  copyText("[원금균등 계산 결과]\n첫 달 상환액: " + outEpFirst.textContent + "\n마지막 달 상환액: " + outEpLast.textContent + "\n총 이자: " + outEpInterest.textContent + "\n총 상환액: " + outEpTotal.textContent);
+}
+
+function calculateBulletLoan(){
+  const principal = Number(onlyNumber(document.getElementById("bulletLoanAmount").value));
+  const annual = Number(onlyNumber(document.getElementById("bulletLoanRate").value));
+  const months = Number(onlyNumber(document.getElementById("bulletLoanMonths").value));
+  if(!principal || principal <= 0) return alert("대출금을 입력하세요.");
+  if(!months || months <= 0) return alert("기간을 입력하세요.");
+
+  const r = monthlyRate(annual);
+  const monthlyInterest = principal * r;
+  const totalInterest = monthlyInterest * months;
+  const maturityPayment = principal + monthlyInterest;
+  const total = principal + totalInterest;
+
+  document.getElementById("outBulletMonthlyInterest").textContent = won(monthlyInterest);
+  document.getElementById("outBulletInterest").textContent = won(totalInterest);
+  document.getElementById("outBulletMaturity").textContent = won(maturityPayment);
+  document.getElementById("outBulletTotal").textContent = won(total);
+  document.getElementById("bulletFormulaBox").textContent =
+    "매월 이자만 납부하고 만기에 원금을 함께 갚는 만기일시상환 방식입니다.";
+  document.getElementById("bulletResultCard").classList.add("show");
+  document.getElementById("bulletResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyBulletLoan(){
+  copyText("[만기일시상환 계산 결과]\n월 이자: " + outBulletMonthlyInterest.textContent + "\n총 이자: " + outBulletInterest.textContent + "\n총 상환액: " + outBulletTotal.textContent);
+}
+
+function calculateInstallmentSaving(){
+  const monthly = Number(onlyNumber(document.getElementById("savingMonthly").value));
+  const annual = Number(onlyNumber(document.getElementById("savingRate").value));
+  const months = Number(onlyNumber(document.getElementById("savingMonths").value));
+  const taxRate = Number(onlyNumber(document.getElementById("savingTaxRate").value)) / 100;
+  if(!monthly || monthly <= 0) return alert("월 납입액을 입력하세요.");
+  if(!months || months <= 0) return alert("기간을 입력하세요.");
+
+  const r = monthlyRate(annual);
+  let principal = monthly * months;
+  let interest = 0;
+  for(let i=0; i<months; i++){
+    interest += monthly * r * (months - i);
+  }
+  const tax = Math.floor(interest * taxRate);
+  const afterTaxInterest = interest - tax;
+  const total = principal + afterTaxInterest;
+
+  document.getElementById("outSavingPrincipal").textContent = won(principal);
+  document.getElementById("outSavingInterest").textContent = won(interest);
+  document.getElementById("outSavingTax").textContent = won(tax);
+  document.getElementById("outSavingTotal").textContent = won(total);
+  document.getElementById("savingFormulaBox").textContent =
+    "매월 납입액에 남은 기간만큼 이자를 붙이는 적금 간이 계산입니다.";
+  document.getElementById("savingResultCard").classList.add("show");
+  document.getElementById("savingResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyInstallmentSaving(){
+  copyText("[적금 계산 결과]\n원금 합계: " + outSavingPrincipal.textContent + "\n세전 이자: " + outSavingInterest.textContent + "\n이자세금: " + outSavingTax.textContent + "\n만기 수령액: " + outSavingTotal.textContent);
+}
+
+function calculateFixedDeposit(){
+  const principal = Number(onlyNumber(document.getElementById("depositAmount").value));
+  const annual = Number(onlyNumber(document.getElementById("depositRate").value));
+  const months = Number(onlyNumber(document.getElementById("depositMonths").value));
+  const taxRate = Number(onlyNumber(document.getElementById("depositTaxRate").value)) / 100;
+  if(!principal || principal <= 0) return alert("예치금을 입력하세요.");
+  if(!months || months <= 0) return alert("기간을 입력하세요.");
+
+  const interest = principal * (annual / 100) * months / 12;
+  const tax = Math.floor(interest * taxRate);
+  const afterTaxInterest = interest - tax;
+  const total = principal + afterTaxInterest;
+
+  document.getElementById("outDepositPrincipal").textContent = won(principal);
+  document.getElementById("outDepositInterest").textContent = won(interest);
+  document.getElementById("outDepositTax").textContent = won(tax);
+  document.getElementById("outDepositTotal").textContent = won(total);
+  document.getElementById("depositFormulaBox").textContent =
+    "예치금 " + won(principal) + " × 연 " + annual + "% × " + months + "개월 ÷ 12 = 세전이자 " + won(interest);
+  document.getElementById("depositResultCard").classList.add("show");
+  document.getElementById("depositResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyFixedDeposit(){
+  copyText("[예금 계산 결과]\n예치금: " + outDepositPrincipal.textContent + "\n세전 이자: " + outDepositInterest.textContent + "\n이자세금: " + outDepositTax.textContent + "\n만기 수령액: " + outDepositTotal.textContent);
+}
+
+function calculateCompoundInterest(){
+  const principal = Number(onlyNumber(document.getElementById("compoundPrincipal").value));
+  const annual = Number(onlyNumber(document.getElementById("compoundRate").value));
+  const years = Number(onlyNumber(document.getElementById("compoundYears").value));
+  const times = Number(onlyNumber(document.getElementById("compoundTimes").value));
+  if(!principal || principal <= 0) return alert("원금을 입력하세요.");
+  if(!years || years <= 0) return alert("기간을 입력하세요.");
+  if(!times || times <= 0) return alert("복리 횟수를 입력하세요.");
+
+  const total = principal * Math.pow(1 + (annual/100)/times, times * years);
+  const interest = total - principal;
+
+  document.getElementById("outCompoundPrincipal").textContent = won(principal);
+  document.getElementById("outCompoundInterest").textContent = won(interest);
+  document.getElementById("outCompoundTotal").textContent = won(total);
+  document.getElementById("compoundFormulaBox").textContent =
+    "원금 × (1 + 연이율 ÷ 복리횟수)^(복리횟수 × 기간) 방식으로 계산했습니다.";
+  document.getElementById("compoundResultCard").classList.add("show");
+  document.getElementById("compoundResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyCompoundInterest(){
+  copyText("[복리 계산 결과]\n원금: " + outCompoundPrincipal.textContent + "\n복리 이자: " + outCompoundInterest.textContent + "\n최종 금액: " + outCompoundTotal.textContent);
+}
+
+function calculateGoalSaving(){
+  const goal = Number(onlyNumber(document.getElementById("goalAmount").value));
+  const current = Number(onlyNumber(document.getElementById("goalCurrent").value)) || 0;
+  const annual = Number(onlyNumber(document.getElementById("goalRate").value));
+  const months = Number(onlyNumber(document.getElementById("goalMonths").value));
+  if(!goal || goal <= 0) return alert("목표금액을 입력하세요.");
+  if(!months || months <= 0) return alert("기간을 입력하세요.");
+
+  const r = monthlyRate(annual);
+  let futureCurrent = current * Math.pow(1 + r, months);
+  let monthly = 0;
+  if(r === 0){
+    monthly = (goal - current) / months;
+  }else{
+    monthly = (goal - futureCurrent) * r / (Math.pow(1+r, months) - 1);
+  }
+  monthly = Math.max(0, monthly);
+  const totalPay = monthly * months;
+  const expectedTotal = futureCurrent + monthly * (Math.pow(1+r, months)-1) / (r || 1) * (r ? 1 : 0);
+  const noRateTotal = current + totalPay;
+
+  document.getElementById("outGoalMonthly").textContent = won(monthly);
+  document.getElementById("outGoalTotalPay").textContent = won(totalPay);
+  document.getElementById("outGoalExpected").textContent = won(goal);
+  document.getElementById("goalFormulaBox").textContent =
+    "목표금액 " + won(goal) + "을 " + months + "개월 동안 만들기 위해 필요한 월 저축액을 계산했습니다.";
+  document.getElementById("goalResultCard").classList.add("show");
+  document.getElementById("goalResultCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+function copyGoalSaving(){
+  copyText("[목돈 만들기 계산 결과]\n필요 월 저축액: " + outGoalMonthly.textContent + "\n총 납입액: " + outGoalTotalPay.textContent + "\n목표금액: " + outGoalExpected.textContent);
+}

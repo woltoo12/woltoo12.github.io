@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>복리 계산기 | 금융 계산기</title>
+  <meta name="description" content="원금, 이율, 기간, 복리 횟수로 복리 최종 금액을 계산합니다.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="side-ad left"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">좌측 배너</div></div></aside>
+    <main class="app">
+      <header><h1>복리 계산기</h1><p>원금, 이율, 기간, 복리 횟수로 복리 최종 금액을 계산합니다.</p></header>
+      <nav class="nav"><a class="" href="index.html">홈</a><a class="" href="overdue-interest.html">연체이자</a><a class="" href="delay-damages.html">지연손해금</a><a class="" href="payment-order.html">지급명령</a><a class="" href="seizure-attachment.html">압류·가압류</a><a class="" href="acquisition-tax.html">취등록세</a><a class="" href="capital-gains-tax.html">양도소득세</a><a class="" href="brokerage-fee.html">중개보수</a><a class="" href="registration-cost.html">등기비용</a><a class="" href="severance-pay.html">퇴직금</a><a class="" href="annual-leave-pay.html">연차수당</a><a class="" href="weekly-holiday-pay.html">주휴수당</a><a class="" href="net-salary.html">실수령액</a><a class="" href="loan-interest.html">대출이자</a><a class="" href="equal-payment-loan.html">원리금균등</a><a class="" href="equal-principal-loan.html">원금균등</a><a class="" href="bullet-loan.html">만기일시</a><a class="" href="installment-saving.html">적금</a><a class="" href="fixed-deposit.html">예금</a><a class="active" href="compound-interest.html">복리</a><a class="" href="goal-saving.html">목돈만들기</a></nav>
+      
+<section class="card"><div class="notice">복리는 이자에 다시 이자가 붙는 방식입니다.</div></section>
+<section class="card"><h2 class="small-title">계산 정보 입력</h2>
+<div class="grid two"><div><label>원금</label><input id="compoundPrincipal" inputmode="numeric" value="10,000,000"></div><div><label>연이율(%)</label><input id="compoundRate" inputmode="decimal" value="5"></div></div>
+<div class="grid two" style="margin-top:12px;"><div><label>기간(년)</label><input id="compoundYears" inputmode="decimal" value="10"></div><div><label>연간 복리 횟수</label><input id="compoundTimes" inputmode="numeric" value="12"></div></div>
+<div class="grid two" style="margin-top:14px;"><button class="btn" onclick="calculateCompoundInterest()">계산하기</button><button class="btn secondary" onclick="location.reload()">초기화</button></div></section>
+<section id="compoundResultCard" class="card result"><h2>계산 결과</h2><div class="summary"><div class="metric"><div class="name">원금</div><div id="outCompoundPrincipal" class="value">0원</div></div><div class="metric"><div class="name">복리 이자</div><div id="outCompoundInterest" class="value">0원</div></div><div class="metric"><div class="name">최종 금액</div><div id="outCompoundTotal" class="value">0원</div></div></div><div id="compoundFormulaBox" class="formula"></div><button class="btn light" style="margin-top:12px" onclick="copyCompoundInterest()">결과 복사</button></section>
+
+<section class="card">
+  <h2 class="small-title">복리 계산 방법</h2>
+  <p>복리는 이자에 다시 이자가 붙는 방식입니다. 기간이 길수록 단리보다 차이가 커지며, 장기 투자나 저축 시뮬레이션에 자주 사용됩니다.</p>
+  <p>이 계산기는 원금, 연이율, 기간, 연간 복리 횟수를 입력해 최종 금액을 계산합니다.</p>
+</section>
+
+
+      <section class="card"><h2 class="small-title">광고 영역 예시</h2><div class="adbox">나중에 Google AdSense 광고 코드를 넣을 위치입니다.</div></section>
+      <footer><p><a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a> · <a href="contact.html">문의하기</a></p>법률·세금 계산기 v9.0 / GitHub Pages용 금융 확장 버전</footer>
+    </main>
+    <aside class="side-ad right"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">우측 배너</div></div></aside>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

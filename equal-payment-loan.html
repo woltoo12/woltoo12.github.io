@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>원리금균등 계산기 | 금융 계산기</title>
+  <meta name="description" content="대출금, 금리, 기간으로 원리금균등상환 월 상환액을 계산합니다.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="side-ad left"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">좌측 배너</div></div></aside>
+    <main class="app">
+      <header><h1>원리금균등 계산기</h1><p>대출금, 금리, 기간으로 원리금균등상환 월 상환액을 계산합니다.</p></header>
+      <nav class="nav"><a class="" href="index.html">홈</a><a class="" href="overdue-interest.html">연체이자</a><a class="" href="delay-damages.html">지연손해금</a><a class="" href="payment-order.html">지급명령</a><a class="" href="seizure-attachment.html">압류·가압류</a><a class="" href="acquisition-tax.html">취등록세</a><a class="" href="capital-gains-tax.html">양도소득세</a><a class="" href="brokerage-fee.html">중개보수</a><a class="" href="registration-cost.html">등기비용</a><a class="" href="severance-pay.html">퇴직금</a><a class="" href="annual-leave-pay.html">연차수당</a><a class="" href="weekly-holiday-pay.html">주휴수당</a><a class="" href="net-salary.html">실수령액</a><a class="" href="loan-interest.html">대출이자</a><a class="active" href="equal-payment-loan.html">원리금균등</a><a class="" href="equal-principal-loan.html">원금균등</a><a class="" href="bullet-loan.html">만기일시</a><a class="" href="installment-saving.html">적금</a><a class="" href="fixed-deposit.html">예금</a><a class="" href="compound-interest.html">복리</a><a class="" href="goal-saving.html">목돈만들기</a></nav>
+      
+<section class="card"><div class="notice">원리금균등상환은 매월 같은 금액을 납부하는 방식입니다.</div></section>
+<section class="card"><h2 class="small-title">계산 정보 입력</h2>
+<div class="grid two"><div><label>대출금</label><input id="eqLoanAmount" inputmode="numeric" value="100,000,000"></div><div><label>연이율(%)</label><input id="eqLoanRate" inputmode="decimal" value="5"></div></div>
+<div class="grid two" style="margin-top:12px;"><div><label>상환기간(개월)</label><input id="eqLoanMonths" inputmode="numeric" value="360"></div><div></div></div>
+<div class="grid two" style="margin-top:14px;"><button class="btn" onclick="calculateEqualPaymentLoan()">계산하기</button><button class="btn secondary" onclick="location.reload()">초기화</button></div></section>
+<section id="eqResultCard" class="card result"><h2>계산 결과</h2><div class="summary"><div class="metric"><div class="name">월 상환액</div><div id="outEqMonthly" class="value">0원</div></div><div class="metric"><div class="name">총 이자</div><div id="outEqInterest" class="value">0원</div></div><div class="metric"><div class="name">총 상환액</div><div id="outEqTotal" class="value">0원</div></div></div><div id="eqFormulaBox" class="formula"></div><button class="btn light" style="margin-top:12px" onclick="copyEqualPaymentLoan()">결과 복사</button></section>
+
+<section class="card">
+  <h2 class="small-title">원리금균등상환이란?</h2>
+  <p>원리금균등상환은 매월 같은 금액을 상환하는 방식입니다. 초기에는 이자 비중이 크고 시간이 갈수록 원금 상환 비중이 커집니다.</p>
+  <p>주택담보대출, 신용대출 등에서 많이 사용하는 방식이며, 매월 상환액이 일정해 가계 예산을 세우기 쉽다는 장점이 있습니다.</p>
+  <h2 class="small-title">자주 묻는 질문</h2>
+  <p><strong>Q. 원리금균등과 원금균등 중 무엇이 유리한가요?</strong><br>총 이자만 보면 원금균등이 낮은 경우가 많지만, 초기 상환 부담은 원리금균등이 더 낮은 편입니다.</p>
+</section>
+
+
+      <section class="card"><h2 class="small-title">광고 영역 예시</h2><div class="adbox">나중에 Google AdSense 광고 코드를 넣을 위치입니다.</div></section>
+      <footer><p><a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a> · <a href="contact.html">문의하기</a></p>법률·세금 계산기 v9.0 / GitHub Pages용 금융 확장 버전</footer>
+    </main>
+    <aside class="side-ad right"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">우측 배너</div></div></aside>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

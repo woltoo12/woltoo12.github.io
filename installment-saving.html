@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>적금 계산기 | 금융 계산기</title>
+  <meta name="description" content="월 납입액, 금리, 기간, 이자세율로 적금 만기 수령액을 계산합니다.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="side-ad left"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">좌측 배너</div></div></aside>
+    <main class="app">
+      <header><h1>적금 계산기</h1><p>월 납입액, 금리, 기간, 이자세율로 적금 만기 수령액을 계산합니다.</p></header>
+      <nav class="nav"><a class="" href="index.html">홈</a><a class="" href="overdue-interest.html">연체이자</a><a class="" href="delay-damages.html">지연손해금</a><a class="" href="payment-order.html">지급명령</a><a class="" href="seizure-attachment.html">압류·가압류</a><a class="" href="acquisition-tax.html">취등록세</a><a class="" href="capital-gains-tax.html">양도소득세</a><a class="" href="brokerage-fee.html">중개보수</a><a class="" href="registration-cost.html">등기비용</a><a class="" href="severance-pay.html">퇴직금</a><a class="" href="annual-leave-pay.html">연차수당</a><a class="" href="weekly-holiday-pay.html">주휴수당</a><a class="" href="net-salary.html">실수령액</a><a class="" href="loan-interest.html">대출이자</a><a class="" href="equal-payment-loan.html">원리금균등</a><a class="" href="equal-principal-loan.html">원금균등</a><a class="" href="bullet-loan.html">만기일시</a><a class="active" href="installment-saving.html">적금</a><a class="" href="fixed-deposit.html">예금</a><a class="" href="compound-interest.html">복리</a><a class="" href="goal-saving.html">목돈만들기</a></nav>
+      
+<section class="card"><div class="notice">일반과세 이자소득세 15.4%를 기본값으로 넣었습니다.</div></section>
+<section class="card"><h2 class="small-title">계산 정보 입력</h2>
+<div class="grid two"><div><label>월 납입액</label><input id="savingMonthly" inputmode="numeric" value="300,000"></div><div><label>연이율(%)</label><input id="savingRate" inputmode="decimal" value="4"></div></div>
+<div class="grid two" style="margin-top:12px;"><div><label>기간(개월)</label><input id="savingMonths" inputmode="numeric" value="12"></div><div><label>이자세율(%)</label><input id="savingTaxRate" inputmode="decimal" value="15.4"></div></div>
+<div class="grid two" style="margin-top:14px;"><button class="btn" onclick="calculateInstallmentSaving()">계산하기</button><button class="btn secondary" onclick="location.reload()">초기화</button></div></section>
+<section id="savingResultCard" class="card result"><h2>계산 결과</h2><div class="summary"><div class="metric"><div class="name">원금 합계</div><div id="outSavingPrincipal" class="value">0원</div></div><div class="metric"><div class="name">세전 이자</div><div id="outSavingInterest" class="value">0원</div></div><div class="metric"><div class="name">이자세금</div><div id="outSavingTax" class="value">0원</div></div></div><div class="summary" style="margin-top:10px"><div class="metric"><div class="name">만기 수령액</div><div id="outSavingTotal" class="value">0원</div></div></div><div id="savingFormulaBox" class="formula"></div><button class="btn light" style="margin-top:12px" onclick="copyInstallmentSaving()">결과 복사</button></section>
+
+<section class="card">
+  <h2 class="small-title">예금·적금 이자 계산 안내</h2>
+  <p>예금은 목돈을 한 번에 맡기는 방식이고, 적금은 매월 일정액을 납입하는 방식입니다. 같은 금리와 기간이라도 이자 계산 방식이 달라 결과가 달라질 수 있습니다.</p>
+  <p>일반적으로 이자소득세는 15.4%를 적용하지만, 비과세·세금우대 상품은 세금이 달라질 수 있습니다.</p>
+</section>
+
+
+      <section class="card"><h2 class="small-title">광고 영역 예시</h2><div class="adbox">나중에 Google AdSense 광고 코드를 넣을 위치입니다.</div></section>
+      <footer><p><a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a> · <a href="contact.html">문의하기</a></p>법률·세금 계산기 v9.0 / GitHub Pages용 금융 확장 버전</footer>
+    </main>
+    <aside class="side-ad right"><div class="ad-label"><div>AD</div><div>광고문의</div><div class="ad-small">우측 배너</div></div></aside>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
